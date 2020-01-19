@@ -10,6 +10,10 @@ public interface UserDao {
 
     User findById(int id);
 
+    void deleteId(int id);
+
+    void clearAll();
+
 
 
 
