@@ -11,7 +11,7 @@ public class User {
         this.userId = id;
         this.userName = userName;
         this.department = department;
-        this.placement = department;
+        this.placement = placement;
 
     }
 

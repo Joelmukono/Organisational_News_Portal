@@ -17,7 +17,7 @@ public class App {
 
         userDao = new Sql2oUserDao(sql2o);
 
-        post("/restaurants/new","application/json",(request,response)->{
+        post("/user/new","application/json",(request,response)->{
             User user = gson.fromJson(request.body(), User.class);
             userDao.add(user);
             response.status(201);
