@@ -8,6 +8,17 @@ public class User {
     private String userName;
     private String department;
     private String placement;
+    private int departmentId;
+
+    public int getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
+    }
+
+
 
     public User(String userName,String department, String placement){
         this.userName = userName;

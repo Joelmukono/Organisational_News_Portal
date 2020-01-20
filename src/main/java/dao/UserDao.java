@@ -10,6 +10,7 @@ public interface UserDao {
 
     User findUserId(int id);
 
+    List<User> getAllDepByUser();
 
     void deleteId(int id);
 

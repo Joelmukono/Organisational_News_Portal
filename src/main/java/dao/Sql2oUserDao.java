@@ -15,7 +15,7 @@ public class Sql2oUserDao implements UserDao {
 
     @Override
     public void add(User user){
-        String sql = "INSERT INTO users (userName, placement, department) VALUES (:userName, :placement, :department)";
+        String sql = "INSERT INTO users (userName, placement, department,departmentsId) VALUES (:userName, :placement, :department,:personId)";
         try(Connection con = sql2o.open()){
             int userId = (int) con.createQuery(sql,true).bind(user).executeUpdate().getKey();
             user.setUserId(userId);
@@ -32,6 +32,14 @@ public class Sql2oUserDao implements UserDao {
 
         }
     }
+
+//    @Override
+//    public List<User> getAllDepByUser(){
+//        try(Connection con = sql2o.open()){
+//            return con.createQuery("SELECT * FROM users WHERE departmentsId = :departmentId")
+//        }
+//    }
+
     @Override
     public User findUserId(int userId){
         try(Connection conn = sql2o.open()){
@@ -42,10 +50,10 @@ public class Sql2oUserDao implements UserDao {
     }
 
     @Override
-    public void deleteId(int id){
-        String sql = "DELETE from users WHERE id=:userId";
+    public void deleteId(int userId){
+        String sql = "DELETE from users WHERE userId=:userId";
         try (Connection con = sql2o.open()){
-            con.createQuery(sql).addParameter("id",id).executeUpdate();
+            con.createQuery(sql).addParameter("userId",userId).executeUpdate();
         }catch (Sql2oException ex){
             System.out.println(ex);
         }
