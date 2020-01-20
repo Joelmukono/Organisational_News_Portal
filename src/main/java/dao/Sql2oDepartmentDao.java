@@ -17,11 +17,11 @@ public class Sql2oDepartmentDao implements DepartmentDao {
     }
 
     @Override
-    public void add(Departments user) {
-        String sql = "INSERT INTO users (departmentName, departmentDescription, numberOfEmployees) VALUES (:departmentName, :departmentDescription, :numberOfEmployees)";
+    public void add(Departments departments) {
+        String sql = "INSERT INTO departments (departmentName, departmentDescription, numberOfEmployees) VALUES (:departmentName, :departmentDescription, :numberOfEmployees)";
         try (Connection con = sql2o.open()) {
-            int depId = (int) con.createQuery(sql, true).bind(user).executeUpdate().getKey();
-            user.setDepartmentId(depId);
+            int depId = (int) con.createQuery(sql, true).bind(departments).executeUpdate().getKey();
+            departments.setDepartmentId(depId);
 
         } catch (Sql2oException ex) {
             System.out.println(ex);
@@ -38,12 +38,21 @@ public class Sql2oDepartmentDao implements DepartmentDao {
 
 
     @Override
-    public List<User> getAllDepByUser(int departmentIds) {
+    public List<User> getAllUsersByDep(int departmentIds) {
         try (Connection con = sql2o.open()) {
             return con.createQuery("SELECT * FROM departments WHERE departmentsIds = :departmentId").addParameter("departmentIds", departmentIds)
                     .executeAndFetch(User.class);
         }
 
+
+    }
+
+    @Override
+    public Departments findDepId(int departmentId){
+        try(Connection conn = sql2o.open()){
+            return conn.createQuery("SELECT * FROM departments WHERE departmentId = :departmentId")
+                    .addParameter("departmentId",departmentId).executeAndFetchFirst(Departments.class);
+        }
 
     }
 

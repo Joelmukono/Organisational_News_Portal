@@ -14,7 +14,9 @@ public interface DepartmentDao {
 
 
 
-    List<User> getAllDepByUser(int id);
+    List<User> getAllUsersByDep(int id);
+
+     Departments findDepId(int userId);
 
 
 

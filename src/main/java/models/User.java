@@ -20,10 +20,11 @@ public class User {
 
 
 
-    public User(String userName,String department, String placement){
+    public User(String userName,String department, String placement,int departmentId){
         this.userName = userName;
         this.department = department;
         this.placement = placement;
+        this.departmentId = departmentId;
 
     }
 
