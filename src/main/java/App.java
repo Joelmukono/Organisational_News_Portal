@@ -26,5 +26,10 @@ public class App {
 
 
         });
+
+        get("users/","application/json",(request,response)->{
+            response.type("application/json");
+            return gson.toJson(userDao.getAll());
+        });
     }
 }
