@@ -14,7 +14,7 @@ public class App {
         Connection conn;
         Gson gson = new Gson();
 
-        String connectionString = "jdbc:h2:~/newsapi.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+        String connectionString = "jdbc:h2:~/news.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
 
         Sql2o sql2o = new Sql2o(connectionString, "", "");
 
@@ -61,7 +61,7 @@ public class App {
 
                 });
 
-        get("/user/:userId","application/json",(request,response)->{
+        get("/department/:DepartmentId","application/json",(request,response)->{
             response.type("application/json");
             int depId = Integer.parseInt(request.params("departmentId"));
             response.type("application/json");
