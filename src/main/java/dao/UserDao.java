@@ -8,7 +8,6 @@ public interface UserDao {
 
     List<User> getAll();
 
-    User findById(int id);
 
     void deleteId(int id);
 
