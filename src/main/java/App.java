@@ -31,5 +31,12 @@ public class App {
             response.type("application/json");
             return gson.toJson(userDao.getAll());
         });
+
+        get("/user/:id","application/json",(request,response)->{
+            response.type("application/json");
+            int userId = Integer.parseInt(request.params("id"));
+            response.type("application/json");
+            return gson.toJson(userDao.findUserId(userId));
+        });
     }
 }
