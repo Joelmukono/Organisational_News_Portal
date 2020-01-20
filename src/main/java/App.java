@@ -61,7 +61,7 @@ public class App {
 
                 });
 
-        get("/department/:DepartmentId","application/json",(request,response)->{
+        get("/department/:departmentId","application/json",(request,response)->{
             response.type("application/json");
             int depId = Integer.parseInt(request.params("departmentId"));
             response.type("application/json");

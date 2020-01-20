@@ -7,6 +7,10 @@ public class Departments {
     private int numberOfEmployees;
     private int departmentId;
 
+    public Departments(){
+
+    }
+
     public String getDepartmentName() {
         return departmentName;
     }
