@@ -33,10 +33,10 @@ public class Sql2oUserDao implements UserDao {
         }
     }
     @Override
-    public User findUserId(int id){
+    public User findUserId(int userId){
         try(Connection conn = sql2o.open()){
-            return conn.createQuery("SELECT * FROM users WHERE id = :id")
-                    .addParameter("id",id).executeAndFetchFirst(User.class);
+            return conn.createQuery("SELECT * FROM users WHERE userId = :userId")
+                    .addParameter("userId",userId).executeAndFetchFirst(User.class);
         }
 
     }
