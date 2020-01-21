@@ -46,7 +46,7 @@ public class App {
         });
 
 
-        post("/departments/new","application/json",(request, response) -> {
+        post("/departments/new/","application/json",(request, response) -> {
             Departments departments = gson.fromJson(request.body(),Departments.class);
             departmentDao.add(departments);
             response.status(201);
@@ -55,7 +55,7 @@ public class App {
 
         });
 
-        get("departments/all/","application/json",(request, response) -> {
+        get("/departments/all/","application/json",(request, response) -> {
                     response.type("application/json");
                     return gson.toJson(departmentDao.getAll());
 
