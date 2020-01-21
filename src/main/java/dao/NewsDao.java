@@ -10,11 +10,9 @@ public interface NewsDao {
 
     List<News> getAll();
 
-    News findUserId(int id);
+    News findNewsById(int id);
 
 
 
-    void deleteId(int id);
 
-    void clearAll();
 }
