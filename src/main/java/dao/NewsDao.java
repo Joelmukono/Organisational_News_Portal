@@ -12,6 +12,8 @@ public interface NewsDao {
 
     News findNewsById(int id);
 
+    void clearAll();
+
 
 
 

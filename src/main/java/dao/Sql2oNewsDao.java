@@ -9,6 +9,7 @@ import java.util.List;
 
 
 public class Sql2oNewsDao implements NewsDao {
+
     private final Sql2o sql2o;
 
     public Sql2oNewsDao(Sql2o sql2o) {
@@ -42,6 +43,15 @@ public class Sql2oNewsDao implements NewsDao {
                     .addParameter("newsId",newsId).executeAndFetchFirst(News.class);
         }
 
+    }
+
+    @Override
+    public void clearAll(){
+        String sql = "DELETE FROM news";
+        try (Connection connection = sql2o.open()){
+            connection.createQuery(sql)
+                    .executeUpdate();
+        } catch (Sql2oException ex){ System.out.println(ex);}
     }
 
 }

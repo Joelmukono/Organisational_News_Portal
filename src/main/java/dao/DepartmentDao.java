@@ -21,6 +21,8 @@ public interface DepartmentDao {
 
     List<News> getAllNewsByDep(int id);
 
+    void clearAll();
+
 
 
 
