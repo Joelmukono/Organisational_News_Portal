@@ -3,8 +3,8 @@
 ### Description
 A restfull api application that allows a user to store and retrieve information from and api about users news and departments related
 to users
-|Installation|description|
-|----------|------------|
+|Installation  |description   |
+|----------|------------------
 |psql < create.sql| create the database|
 
 # Query Api
