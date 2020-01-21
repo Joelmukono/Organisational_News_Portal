@@ -3,9 +3,9 @@
 ### Description
 A restfull api application that allows a user to store and retrieve information from and api about users news and departments related
 to users
-|Installation  |description   |
-|----------|------------------
-|psql < create.sql| create the database|
+# Database Creation 
+
+* psql < create.sql run in terminal to  create the database
 
 # Query Api
 
