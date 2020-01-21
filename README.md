@@ -14,12 +14,15 @@ to users
 |GET  all departments  | http://0.0.0.0:4567/departments/all/|
 |GET all users|http://0.0.0.0:4567/users/|
 |GET all users by id|http://0.0.0.0:4567/user/1/|
-|POST new department|http://0.0.0.0:4567/departments/new/ add properties|
-|POST new users in department|http://0.0.0.0:4567/department/3/user/new/ add properties|
+|POST new department|http://0.0.0.0:4567/departments/new/ add properties, departmentDescription departmentName numberOfEmployees |
+|POST new users in department|http://0.0.0.0:4567/department/3/user/new/ add properties,username department placement|
 |GET add departments by id|http://0.0.0.0:4567/department/1/|
 |GET all news|http://0.0.0.0:4567/news/all/|
-|POST new news|http://0.0.0.0:4567/news/new/ add properties|
+|POST new news|http://0.0.0.0:4567/news/new/ add properties,description|
 |GET news by id|http://0.0.0.0:4567/news/2/|
+
+# Properties
+
 ### AUTHOR
 * Joel Mukono
 
