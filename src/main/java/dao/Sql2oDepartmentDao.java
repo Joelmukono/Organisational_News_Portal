@@ -11,6 +11,8 @@ import java.util.List;
 
 public class Sql2oDepartmentDao implements DepartmentDao {
 
+
+
     private final Sql2o sql2o;
 
     public Sql2oDepartmentDao(Sql2o sql2o) {
