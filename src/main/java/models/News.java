@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class News {
 
+
     int newsId;
     String description;
 

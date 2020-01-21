@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Departments {
 
+
     private String departmentName;
     private String departmentDescription;
     private int numberOfEmployees;
