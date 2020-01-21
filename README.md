@@ -5,7 +5,7 @@ A restfull api application that allows a user to store and retrieve information 
 to users
 # Database Creation 
 
-* psql < create.sql run in terminal to  create the database
+* psql < create.sql         run in terminal to  create the database
 
 # Query Api
 
