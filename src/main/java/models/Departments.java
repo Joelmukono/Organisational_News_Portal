@@ -7,7 +7,11 @@ public class Departments {
     private int numberOfEmployees;
     private int departmentId;
 
-    public Departments(){
+    public Departments(String departmentName,String departmentDescription,int numberOfEmployees,int departmentId){
+        this.departmentDescription = departmentDescription;
+        this.departmentName = departmentName;
+        this.numberOfEmployees = numberOfEmployees;
+        this.departmentId = departmentId;
 
     }
 

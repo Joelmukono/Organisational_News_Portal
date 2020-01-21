@@ -14,17 +14,17 @@ public class App {
         Connection conn;
         Gson gson = new Gson();
 
-        String connectionString = "jdbc:h2:~/news.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+        String connectionString = "jdbc:postgresql://localhost:5432/news";;
 
-        Sql2o sql2o = new Sql2o(connectionString, "", "");
+        Sql2o sql2o = new Sql2o(connectionString, "joel", "password");
 
         userDao = new Sql2oUserDao(sql2o);
         departmentDao = new Sql2oDepartmentDao(sql2o);
 
-        post("/department/:departmentId/user/new","application/json",(request,response)->{
+        post("/department/:departmentId/user/new/","application/json",(request,response)->{
             User user = gson.fromJson(request.body(), User.class);
-            int departmentId = Integer.parseInt(request.params("departmentId"));
-            user.setDepartmentId(departmentId);
+            int depId = Integer.parseInt(request.params("departmentId"));
+            user.setDepartmentsId(depId);
             userDao.add(user);
             response.status(201);
             response.type("application/json");
@@ -33,12 +33,12 @@ public class App {
 
         });
 
-        get("users/","application/json",(request,response)->{
+        get("/users/","application/json",(request,response)->{
             response.type("application/json");
             return gson.toJson(userDao.getAll());
         });
 
-        get("/user/:userId","application/json",(request,response)->{
+        get("/user/:userId/","application/json",(request,response)->{
             response.type("application/json");
             int userId = Integer.parseInt(request.params("userId"));
             response.type("application/json");
@@ -55,13 +55,13 @@ public class App {
 
         });
 
-        get("departments/all","application/json",(request, response) -> {
+        get("departments/all/","application/json",(request, response) -> {
                     response.type("application/json");
                     return gson.toJson(departmentDao.getAll());
 
                 });
 
-        get("/department/:departmentId","application/json",(request,response)->{
+        get("/department/:departmentId/","application/json",(request,response)->{
             response.type("application/json");
             int depId = Integer.parseInt(request.params("departmentId"));
             response.type("application/json");

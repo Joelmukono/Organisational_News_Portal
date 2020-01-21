@@ -8,23 +8,32 @@ public class User {
     private String userName;
     private String department;
     private String placement;
-    private int departmentId;
+
+    public int getDepartmentsId() {
+        return departmentsId;
+    }
+
+    public void setDepartmentsId(int departmentsId) {
+        this.departmentsId = departmentsId;
+    }
+
+    private int departmentsId;
 
     public int getDepartmentId() {
-        return departmentId;
+        return departmentsId;
     }
 
     public void setDepartmentId(int departmentId) {
-        this.departmentId = departmentId;
+        this.departmentsId = departmentId;
     }
 
 
 
-    public User(String userName,String department, String placement,int departmentId){
+    public User(String userName,String department, String placement,int departmentsId){
         this.userName = userName;
         this.department = department;
         this.placement = placement;
-        this.departmentId = departmentId;
+        this.departmentsId = departmentsId;
 
     }
 
