@@ -7,6 +7,10 @@ to users
 
 * psql < create.sql         run in terminal to  create the database
 
+# Run app
+
+navigate to App.java then run in intelij
+
 # Query Api
 
 |Method    |URL    |
